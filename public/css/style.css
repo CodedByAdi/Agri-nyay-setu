@@ -1,0 +1,579 @@
+/* 
+ * Legal Aid Farmers - Main Stylesheet
+ * This contains all the styling for the website
+ */
+
+/* ========= Variables ========= */
+:root {
+    --primary-color: #e25e31;     /* Orange buttons */
+    --secondary-color: #1d665b;   /* Dark green footer */
+    --light-green: #a3cc52;       /* Light green testimonials */
+    --yellow: #f6d24d;            /* Yellow testimonials */
+    --cream: #f4f1e0;             /* Background color */
+    --text-dark: #333333;         /* Main text color */
+    --text-light: #ffffff;        /* Light text color */
+    --border-radius: 4px;
+    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+  
+  /* ========= Reset & Base Styles ========= */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: gilroy;
+    font-size: large;
+    text-transform: uppercase;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--cream);
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul, ol {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* ========= Typography ========= */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
+  
+  /* ========= Layout Components ========= */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+  
+  .col {
+    padding: 0 15px;
+    flex: 1;
+  }
+  
+  /* ========= Buttons ========= */
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    text-align: center;
+    transition: var(--transition);
+    font-weight: bold;
+    border: none;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+  }
+  
+  .btn-primary:hover {
+    background-color: #c9502a;
+  }
+  
+  .btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+  }
+  
+  .btn-secondary:hover {
+    background-color: #144a42;
+  }
+  
+  /* ========= Header & Navigation ========= */
+  header {
+    background-color: var(--cream);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    font-weight: 500;
+  }
+  
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+  
+  .nav-links a.active {
+    font-weight: bold;
+  }
+  
+  .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* ========= Carousel ========= */
+  .carousel {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+  }
+  
+  .carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  
+  .carousel-item.active {
+    opacity: 1;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--text-light);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 800px;
+  }
+  
+  .carousel-caption h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .carousel-prev,
+  .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--text-light);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .carousel-prev {
+    left: 20px;
+  }
+  
+  .carousel-next {
+    right: 20px;
+  }
+  
+  /* ========= Testimonials ========= */
+  .join-community {
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+  
+  .testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .testimonial-card {
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    width: 250px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .testimonial-card.green {
+    background-color: var(--light-green);
+  }
+  
+  .testimonial-card.yellow {
+    background-color: var(--yellow);
+  }
+  
+  .testimonial-card blockquote {
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .author-info {
+    text-align: left;
+  }
+  
+  .author-info .name {
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .author-info .role {
+    font-size: 0.8rem;
+    margin: 0;
+  }
+  
+  /* ========= How to Get Assistance ========= */
+  .how-to-get-assistance {
+    padding: 2rem 1.5rem 4rem;
+    background-color: #fff;
+  }
+  
+  .assistance-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .assistance-steps {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .step {
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .assistance-image {
+    flex: 1;
+    min-width: 300px;
+    padding: 1rem;
+  }
+  
+  .assistance-image img {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+  }
+  
+  .explore-btn {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.75rem 2rem;
+  }
+  
+  /* ========= Footer ========= */
+  footer {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: 2rem 1.5rem;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .partners-section {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .footer-links a {
+    font-size: 0.8rem;
+    color: var(--text-light);
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .social-links img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+  }
+  
+  /* ========= Authentication Pages ========= */
+  .auth-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+    justify-content: center;
+    background-color: var(--light-green);
+  }
+  
+  .login-section,
+  .register-section {
+    background-color: var(--cream);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .tab-container {
+    display: flex;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .tab-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    color: #777;
+  }
+  
+  .tab-btn.active {
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--primary-color);
+  }
+  
+  .login-form,
+  .register-form {
+    display: none;
+  }
+  
+  .login-form.active,
+  .register-form.active {
+    display: block;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+  }
+  
+  .login-btn,
+  .register-btn,
+  .verify-btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  /* ========= NGO Directory Page ========= */
+  .ngo-filter-container {
+    display: flex;
+    padding: 2rem 0;
+    min-height: 600px;
+  }
+  
+  .filter-sidebar {
+    width: 250px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1.5rem;
+  }
+  
+  .filter-section {
+    margin-bottom: 1.5rem;
+  }
+  
+  .filter-section h4 {
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .filter-section ul {
+    margin-left: 1rem;
+  }
+  
+  .filter-section li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .ngo-results {
+    flex: 1;
+    padding: 1.5rem;
+    background-color: var(--cream);
+  }
+  
+  .ngo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .ngo-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+  
+  .pagination button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+  }
+  
+  .pagination button.active {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border-color: var(--primary-color);
+  }
+  
+  /* ========= Content Pages ========= */
+  .content-header {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .content-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .content-header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--text-light);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    width: 80%;
+  }
+  
+  .content-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .content-card {
+    background-color: #fff;
+  }
