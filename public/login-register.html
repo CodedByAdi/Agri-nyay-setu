@@ -3,156 +3,330 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login/Register - Legal Aid Farmers</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/responsive.css">
-  <link rel="icon" href="images/favicon.ico">
+  <title>Login and Register</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f7e8;
+    }
+    
+    .translate-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      background-color: #074b54;
+      color: white;
+      border: none;
+      padding: 5px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 100;
+    }
+    
+    header {
+      background-color: #a6c64c;
+      color: black;
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+    }
+    
+    .container {
+      display: flex;
+      max-width: 1000px;
+      margin: 20px auto;
+      gap: 30px;
+    }
+    
+    .section {
+      flex: 1;
+      padding: 20px;
+    }
+    
+    h1 {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    h2 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    
+    .user-type {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .column {
+      flex: 1;
+    }
+    
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+    }
+    
+    .login-btn {
+      background-color: #e15c28;
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      width: 80px;
+      text-align: center;
+    }
+    
+    .form-field {
+      background-color: #a6c64c;
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 20px;
+      text-align: center;
+      color: white;
+      font-size: 14px;
+    }
+    
+    .register-btn {
+      background-color: #074b54;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: 15px auto;
+      width: 120px;
+      text-align: center;
+    }
+    
+    footer {
+      background-color: #e15c28;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      margin-right: 15px;
+      font-size: 12px;
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .social-icons a {
+      color: white;
+      font-size: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      
+      .user-type {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <nav>
-      <div class="logo">Legal Aid Farmers</div>
-      <div class="nav-links">
-        <a href="login-register.html" class="btn btn-primary active">login/register</a>
-        <a href="guidelines.html">guidelines</a>
-        <a href="subsidies.html">subsidies</a>
-        <a href="educate.html">educate</a>
-        <a href="#" class="btn btn-primary" id="translate-btn">translate</a>
-      </div>
-      <div class="menu-toggle">☰</div>
-    </nav>
+    <button id="translateBtn" class="translate-btn">Translate to Hindi</button>
+    <h1 id="welcome">Welcome</h1>
   </header>
   
-  <main class="auth-container">
+  <div class="container">
     <!-- Login Section -->
-    <section class="login-section">
-      <h2>login</h2>
+    <div class="section">
+      <h1 id="loginTitle">login</h1>
       
-      <div class="auth-tabs">
-        <div class="tab-container">
-          <button class="tab-btn active" data-tab="farmer-login">farmer</button>
-          <button class="tab-btn" data-tab="lawyer-login">lawyer/ngo</button>
+      <div class="user-type">
+        <div class="column">
+          <h2 id="farmerTitle1">farmer</h2>
+          <input type="text" id="farmerName" placeholder="your name">
+          <input type="email" id="farmerEmail" placeholder="your email">
+          <button class="login-btn" id="farmerLoginBtn">login</button>
         </div>
         
-        <!-- Farmer Login Form -->
-        <form id="farmer-login" class="login-form active">
-          <div class="form-group">
-            <label for="farmer-name">your name</label>
-            <input type="text" id="farmer-name" name="name" placeholder="your name" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="farmer-email">your email</label>
-            <input type="email" id="farmer-email" name="email" placeholder="your email" required>
-          </div>
-          
-          <button type="submit" class="btn btn-primary login-btn">login</button>
-        </form>
-        
-        <!-- Lawyer/NGO Login Form -->
-        <form id="lawyer-login" class="login-form">
-          <div class="form-group">
-            <label for="lawyer-name">your name</label>
-            <input type="text" id="lawyer-name" name="name" placeholder="your name" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="lawyer-email">your email</label>
-            <input type="email" id="lawyer-email" name="email" placeholder="your email" required>
-          </div>
-          
-          <button type="submit" class="btn btn-primary login-btn">login</button>
-        </form>
+        <div class="column">
+          <h2 id="lawyerTitle1">lawyer/ngo</h2>
+          <input type="text" id="lawyerName" placeholder="your name">
+          <input type="email" id="lawyerEmail" placeholder="your email">
+          <button class="login-btn" id="lawyerLoginBtn">login</button>
+        </div>
       </div>
-    </section>
+    </div>
     
-    <!-- Registration Section -->
-    <section class="register-section">
-      <h2>new here?</h2>
-      <h3>Register</h3>
+    <!-- Register Section -->
+    <div class="section">
+      <h1 id="registerTitle">new here?<br>Register</h1>
       
-      <div class="auth-tabs">
-        <div class="tab-container">
-          <button class="tab-btn active" data-tab="farmer-register">farmer</button>
-          <button class="tab-btn" data-tab="lawyer-register">lawyer/ngo</button>
+      <div class="user-type">
+        <div class="column">
+          <h2 id="farmerTitle2">farmer</h2>
+          <div class="form-field" id="nameField1">NAME</div>
+          <div class="form-field" id="phoneField1">PHONE NUMBER</div>
+          <div class="form-field" id="emailField1">EMAIL</div>
+          <div class="form-field" id="rationField">RATION CARD NUMBER</div>
+          <div class="form-field" id="addressField1">ADDRESS</div>
+          <button class="register-btn" id="farmerRegisterBtn">REGISTER</button>
         </div>
         
-        <!-- Farmer Registration Form -->
-        <form id="farmer-register" class="register-form active">
-          <div class="form-group">
-            <input type="text" name="name" placeholder="NAME" required>
-          </div>
-          
-          <div class="form-group">
-            <input type="tel" name="phone" placeholder="PHONE NUMBER" required>
-          </div>
-          
-          <div class="form-group">
-            <input type="email" name="email" placeholder="EMAIL" required>
-          </div>
-          
-          <div class="form-group">
-            <input type="text" name="rationCard" placeholder="RATION CARD NUMBER" required>
-          </div>
-          
-          <div class="form-group">
-            <input type="text" name="address" placeholder="ADDRESS" required>
-          </div>
-          
-          <button type="submit" class="btn btn-primary register-btn">REGISTER</button>
-        </form>
-        
-        <!-- Lawyer/NGO Registration Form -->
-        <form id="lawyer-register" class="register-form">
-          <div class="form-group">
-            <input type="text" name="name" placeholder="NAME" required>
-          </div>
-          
-          <div class="form-group">
-            <input type="tel" name="phone" placeholder="PHONE NUMBER" required>
-          </div>
-          
-          <div class="form-group">
-            <input type="email" name="email" placeholder="EMAIL" required>
-          </div>
-          
-          <div class="form-group">
-            <input type="text" name="gstin" placeholder="GSTIN NUMBER" required>
-          </div>
-          
-          <div class="form-group">
-            <input type="text" name="officeAddress" placeholder="OFFICE ADDRESS" required>
-          </div>
-          
-          <button type="submit" class="btn btn-secondary verify-btn">VERIFY ID</button>
-        </form>
+        <div class="column">
+          <h2 id="lawyerTitle2">lawyer/ngo</h2>
+          <div class="form-field" id="nameField2">NAME</div>
+          <div class="form-field" id="phoneField2">PHONE NUMBER</div>
+          <div class="form-field" id="emailField2">EMAIL</div>
+          <div class="form-field" id="gstinField">GSTIN NUMBER</div>
+          <div class="form-field" id="officeField">OFFICE ADDRESS</div>
+          <button class="register-btn" id="lawyerRegisterBtn">VERIFY ID</button>
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
   
   <footer>
     <div class="footer-content">
-      <div class="partners-section">
-        <h3>OUR PARTNERS</h3>
-        <!-- Partner logos would go here -->
-      </div>
-      
       <div class="footer-links">
-        <a href="#">PRIVACY POLICY</a>
-        <a href="#">TERMS OF SERVICE</a>
-        <a href="#">HELP</a>
+        <a href="#" id="privacyLink">PRIVACY POLICY</a>
+        <a href="#" id="termsLink">TERMS OF SERVICE</a>
+        <a href="#" id="helpLink">HELP</a>
       </div>
-      
-      <div class="social-links">
-        <a href="#"><img src="images/icons/social-icons/facebook.svg" alt="Facebook"></a>
-        <a href="#"><img src="images/icons/social-icons/instagram.svg" alt="Instagram"></a>
-        <a href="#"><img src="images/icons/social-icons/twitter.svg" alt="Twitter"></a>
-        <a href="#"><img src="images/icons/social-icons/linkedin.svg" alt="LinkedIn"></a>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i>⭘</a>
+        <a href="#"><i class="fab fa-instagram"></i>⭘</a>
+        <a href="#"><i class="fab fa-twitter"></i>⭘</a>
+        <a href="#"><i class="fab fa-linkedin-in"></i>⭘</a>
       </div>
     </div>
   </footer>
-  
-  <script src="js/main.js"></script>
-  <script src="js/auth.js"></script>
+
+  <script>
+    const translations = {
+      english: {
+        translateBtn: "Translate to Hindi",
+        welcome: "Welcome",
+        loginTitle: "login",
+        registerTitle: "new here?<br>Register",
+        farmerTitle: "farmer",
+        lawyerTitle: "lawyer/ngo",
+        yourName: "your name",
+        yourEmail: "your email",
+        loginBtn: "login",
+        nameField: "NAME",
+        phoneField: "PHONE NUMBER",
+        emailField: "EMAIL",
+        rationField: "RATION CARD NUMBER",
+        addressField: "ADDRESS",
+        gstinField: "GSTIN NUMBER",
+        officeField: "OFFICE ADDRESS",
+        registerBtn: "REGISTER",
+        verifyBtn: "VERIFY ID",
+        privacyLink: "PRIVACY POLICY",
+        termsLink: "TERMS OF SERVICE",
+        helpLink: "HELP"
+      },
+      hindi: {
+        translateBtn: "अंग्रेज़ी में अनुवाद करें",
+        welcome: "स्वागत है",
+        loginTitle: "लॉगिन",
+        registerTitle: "नए हैं?<br>पंजीकरण करें",
+        farmerTitle: "किसान",
+        lawyerTitle: "वकील/एनजीओ",
+        yourName: "आपका नाम",
+        yourEmail: "आपका ईमेल",
+        loginBtn: "लॉगिन",
+        nameField: "नाम",
+        phoneField: "फोन नंबर",
+        emailField: "ईमेल",
+        rationField: "राशन कार्ड नंबर",
+        addressField: "पता",
+        gstinField: "जीएसटीआईएन नंबर",
+        officeField: "कार्यालय का पता",
+        registerBtn: "पंजीकरण करें",
+        verifyBtn: "आईडी सत्यापित करें",
+        privacyLink: "गोपनीयता नीति",
+        termsLink: "सेवा की शर्तें",
+        helpLink: "सहायता"
+      }
+    };
+
+    let currentLanguage = 'english';
+
+    function translatePage() {
+      // Toggle language
+      currentLanguage = currentLanguage === 'english' ? 'hindi' : 'english';
+      const t = translations[currentLanguage];
+      
+      // Update button text
+      document.getElementById('translateBtn').innerText = t.translateBtn;
+      
+      // Update headers
+      document.getElementById('welcome').innerText = t.welcome;
+      document.getElementById('loginTitle').innerHTML = t.loginTitle;
+      document.getElementById('registerTitle').innerHTML = t.registerTitle;
+      
+      // Update farmer section
+      document.getElementById('farmerTitle1').innerText = t.farmerTitle;
+      document.getElementById('farmerTitle2').innerText = t.farmerTitle;
+      document.getElementById('farmerName').placeholder = t.yourName;
+      document.getElementById('farmerEmail').placeholder = t.yourEmail;
+      document.getElementById('farmerLoginBtn').innerText = t.loginBtn;
+      document.getElementById('farmerRegisterBtn').innerText = t.registerBtn;
+      
+      // Update lawyer section
+      document.getElementById('lawyerTitle1').innerText = t.lawyerTitle;
+      document.getElementById('lawyerTitle2').innerText = t.lawyerTitle;
+      document.getElementById('lawyerName').placeholder = t.yourName;
+      document.getElementById('lawyerEmail').placeholder = t.yourEmail;
+      document.getElementById('lawyerLoginBtn').innerText = t.loginBtn;
+      document.getElementById('lawyerRegisterBtn').innerText = t.verifyBtn;
+      
+      // Update form fields
+      document.getElementById('nameField1').innerText = t.nameField;
+      document.getElementById('nameField2').innerText = t.nameField;
+      document.getElementById('phoneField1').innerText = t.phoneField;
+      document.getElementById('phoneField2').innerText = t.phoneField;
+      document.getElementById('emailField1').innerText = t.emailField;
+      document.getElementById('emailField2').innerText = t.emailField;
+      document.getElementById('rationField').innerText = t.rationField;
+      document.getElementById('addressField1').innerText = t.addressField;
+      document.getElementById('gstinField').innerText = t.gstinField;
+      document.getElementById('officeField').innerText = t.officeField;
+      
+      // Update footer links
+      document.getElementById('privacyLink').innerText = t.privacyLink;
+      document.getElementById('termsLink').innerText = t.termsLink;
+      document.getElementById('helpLink').innerText = t.helpLink;
+    }
+
+    // Add event listener to translate button
+    document.getElementById('translateBtn').addEventListener('click', translatePage);
+  </script>
 </body>
 </html>

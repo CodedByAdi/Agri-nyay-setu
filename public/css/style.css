@@ -25,7 +25,7 @@
   }
   
   body {
-    font-family: gilroy;
+    font-family:  helvetica now display;
     font-size: large;
     text-transform: uppercase;
     line-height: 1.6;
@@ -263,9 +263,23 @@
   .testimonial-card.green {
     background-color: var(--light-green);
   }
+  .testimonial-card.green img{
+    width: 50px;  /* Adjust size */
+    height: 50px;
+    border-radius: 50%;  /* Makes images circular */
+    object-fit: cover;  /* Ensures images don’t stretch */
+    flex-wrap: wrap;
+    
+  }
   
   .testimonial-card.yellow {
     background-color: var(--yellow);
+  }
+  .testimonial-card.yellow img{
+    width: 50px;  /* Adjust size */
+    height: 50px;
+    border-radius: 50%;  /* Makes images circular */
+    object-fit: cover;  /* Ensures images don’t stretch */
   }
   
   .testimonial-card blockquote {
@@ -577,3 +591,15 @@
   .content-card {
     background-color: #fff;
   }
+ .social-links {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+  }
+  
+.social-links  img {
+    width: 20px;
+    height: 20px;
+  }
+  
